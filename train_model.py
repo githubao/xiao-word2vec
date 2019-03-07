@@ -19,10 +19,12 @@ from gensim.models import Word2Vec
 from gensim.models.word2vec import LineSentence
 
 
+# collected 3476501 word types from a corpus of 198171815 raw words and 334520 sentences
+# training on 198171815 raw words (184832425 effective words) took 255.8s, 722705 effective words/s
+# storing 822586x200 projection weights into wiki_chs.bin
 def train():
     """
-    使用gensim的Word2vec类进行训练，大小为200维
-    保存模型为model1，保存word2vec格式的模型为model2
+    使用gensim的Word2vec类进行训练大小为200维，保存模型为model.bin
     :return:
     """
 
@@ -43,8 +45,8 @@ def train():
     model = Word2Vec(LineSentence(inp), size=200, window=5, min_count=5,
                      workers=multiprocessing.cpu_count())
 
-    model.save('{}.model'.format(outp))
-    model.wv.save_word2vec_format('{}.vec'.format(outp), binary=False)
+    # model.save('{}.model'.format(outp))
+    # model.wv.save_word2vec_format('{}.vec'.format(outp), binary=False)
     model.wv.save_word2vec_format('{}.bin'.format(outp), binary=True)
 
 
