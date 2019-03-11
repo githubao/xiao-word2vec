@@ -1,5 +1,5 @@
 .idea
-data
+data/wiki_chs.bin
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
