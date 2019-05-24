@@ -1,7 +1,6 @@
 .idea
 data/wiki_chs.bin
 word_cnt
-*.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
